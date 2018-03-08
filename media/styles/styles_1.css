@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+	padding: 0;
+	font-family: verdana;
+	font-size: 15px;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+p {
+	margin: 20px 0 0 0;
+}
+
+a {
+	color: #306090;
+}
+
+a:active {
+	background-color: #ff2;
+}
+
+.tabs {
+	width: 90%;
+	max-width: 1000px;
+    display: block;
+    margin: 40px auto;
+	position: relative;
+}
+
+.tabs .tab {
+    float: left;
+    display: block;
+}
+
+.tabs .tab > input[type="radio"] {
+	/*
+    position: absolute;
+    top: -9999px;
+	left: -9999px;
+	*/
+	display: none;
+}
+
+.tabs .tab > label {
+    display: block;
+	height: 40px;
+	padding: 10px 13px 0 13px;
+	box-sizing: border-box;
+	border-right: 1px solid #fff;
+    font-size: 15px;
+	text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    color: #FFF;
+	background: #306090;
+}
+
+.tabs .content {
+    z-index: 0;
+    overflow: hidden;
+    width: calc(100% - 50px);
+    padding: 25px;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #f6f6f6;
+    color: #333;    
+    opacity:0;
+	transition: opacity 100ms;
+}
+
+/* to select the clicked tab label */
+.tabs>.tab>[id^="tab"]:checked + label {
+    top: 0;
+    background: #f6f6f6;
+	color: #111111;
+}
+
+/* to show the content of the selectet tab label */
+.tabs>.tab>[id^="tab"]:checked ~ [id^="tab-content"] {
+    z-index: 1;   
+    opacity: 1;
+    transition: opacity 100ms;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 900px) {
+
+	.tabs .tab > label {
+		height: 50px;
+		padding: 15px 10px 0 10px;
+		border-right: none;
+	}
+
+	.tabs {
+		width: 100%;
+		margin: 0;
+	}
+
+	.tabs .tab {
+		float: none;
+	}
+
+	.tabs .content {
+		width: calc(100% - 30px);
+		padding: 15px;
+		top: 200px;
+	}	
+
+	.tabs .tab > label {
+		border-bottom: 1px solid #888;
+	}	
+
+}
